@@ -20,6 +20,11 @@ public class PostsApiController {
         return postsService.save(posts);
     }
 
+    @PutMapping("/api/v1/posts/{id}")
+    public Long update(@PathVariable Long id, @RequestBody Posts posts) {
+        return save(posts);
+    }
+
     @GetMapping("/api/v1/posts/{id}")
     public Posts findById (@PathVariable Long id) {
         return postsService.findOne(id);
